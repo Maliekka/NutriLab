@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">NutriLab</string>
+    <string name="nut">Nutriólogo</string>
+    <string name="pac">Paciente</string>
+    <string name="email">Correo Electrónico</string>
+    <string name="pass">Contraseña</string>
+    <string name="loginFailed">No se pudo iniciar sesión</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/patientMenuDiet"
+            android:title="Mi Dieta"
+            android:icon="@drawable/ic_diet"
+            android:checked="true">
+        </item>
+        <item android:id="@+id/patientMenuRecipes"
+            android:title="Menú Saludable"
+            android:icon="@drawable/ic_recipes"
+            android:checked="true">
+        </item>
+        <item
+            android:id="@+id/patientMenuProgress"
+            android:title="Monitoreo de progreso"
+            android:icon="@drawable/ic_stats"
+            android:checked="true">
+        </item>
+        <item android:id="@+id/patientMenuNutriProfile"
+            android:title="Acerca de mi nutriólogo"
+            android:icon="@drawable/ic_personsearch"
+            android:checked="true">
+        </item>
+
+        <item android:title="Otros"
+            >
+
+            <menu>
+                <group android:checkableBehavior="single">
+                    <item
+                        android:id="@+id/patientMenuSettings"
+                        android:title="Ajustes"
+                        android:icon="@drawable/ic_config"
+                        >
+
+                    </item>
+
+                    <item
+                        android:id="@+id/patientMenuLogout"
+                        android:title="Cerrar Sesión"
+                        android:icon="@drawable/ic_logout"
+                        >
+                    </item>
+
+
+                </group>
+            </menu>
+        </item>
+
+    </group>
+</menu>

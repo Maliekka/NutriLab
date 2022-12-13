@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "766803193422",
+    "project_id": "nutrilab-d9709",
+    "storage_bucket": "nutrilab-d9709.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:766803193422:android:8ac4aa152d80ba57bd1d1f",
+        "android_client_info": {
+          "package_name": "com.example.nutrilab"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "766803193422-kk76td8hnl3r0uql63gufqikeohfucuh.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBJwTVm1i84txc_XpSZs1nC37_3AqEdAvA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "766803193422-kk76td8hnl3r0uql63gufqikeohfucuh.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

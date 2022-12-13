@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nutriMenuPacients"
+            android:title="Mis Pacientes"
+
+            android:icon="@drawable/ic_pacients"
+            android:iconTint="@color/hint"
+            android:checked="true"
+            >
+
+        </item>
+
+
+        <item
+            android:id="@+id/nutriMenuAppointments"
+            android:title="Citas"
+            android:icon="@drawable/ic_appointment"
+            >
+
+        </item>
+
+        <item
+            android:id="@+id/nutriMenuRecipes"
+            android:title="Menú saludable"
+            android:icon="@drawable/ic_recipes"
+            >
+
+        </item>
+
+        <item
+            android:id="@+id/nutriMenuDiets"
+            android:title="Archivo de Dietas"
+            android:icon="@drawable/ic_archive"
+            >
+
+        </item>
+    </group>
+
+    <item android:title="Otros"
+        >
+
+        <menu>
+            <group android:checkableBehavior="single">
+                <item
+                    android:id="@+id/nutriMenuProfile"
+                    android:title="Perfil"
+                    android:icon="@drawable/ic_profile"
+                    >
+
+                </item>
+                <item
+                    android:id="@+id/nutriMenuConfig"
+                    android:title="Ajustes"
+                    android:icon="@drawable/ic_config"
+                    >
+
+                </item>
+
+                <item
+                    android:id="@+id/nutriMenuLogout"
+                    android:title="Cerrar Sesión"
+                    android:icon="@drawable/ic_logout"
+                    >
+                </item>
+
+
+            </group>
+        </menu>
+    </item>
+
+</menu>

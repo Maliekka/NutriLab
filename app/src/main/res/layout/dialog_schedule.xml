@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Día"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toTopOf="@+id/selectedDay"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+    </TextView>
+
+    <TextView
+        android:id="@+id/selectedDay"
+        android:layout_width="120dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="48dp"
+        android:layout_marginEnd="16dp"
+        android:background="@drawable/round_gray"
+        android:gravity="center"
+        android:hint="Lunes"
+        android:textAlignment="center"
+        android:textColor="@color/textMain"
+        android:textColorHint="@color/textMain"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.44"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"></TextView>
+
+    <Spinner
+        android:id="@+id/spinnerDay"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="48dp"
+        android:spinnerMode="dropdown"
+        android:theme="@style/ThemeOverlay.AppCompat.Light"
+        android:visibility="visible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/selectedDay"
+        app:layout_constraintTop_toTopOf="parent"></Spinner>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="38dp"
+        android:layout_marginTop="32dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/selectedDay">
+
+        <TextView
+
+            android:layout_width="50dp"
+            android:layout_height="30dp"
+            android:layout_marginEnd="10dp"
+            android:gravity="center"
+            android:text="Inicio"
+            android:textSize="16sp">
+
+        </TextView>
+
+        <TextView
+            android:layout_width="50dp"
+            android:layout_height="30dp"
+            android:gravity="center"
+            android:text=" "
+            android:textColor="@color/hint"
+
+            android:textSize="18sp"></TextView>
+
+        <TextView
+
+            android:layout_width="50dp"
+            android:layout_height="30dp"
+            android:layout_marginStart="10dp"
+            android:gravity="center"
+            android:text="Fin"
+
+            android:textSize="16sp">
+
+        </TextView>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="38dp"
+        android:layout_marginTop="84dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/selectedDay">
+
+        <TextView
+            android:id="@+id/startHourDialog"
+            android:layout_width="50dp"
+            android:layout_height="30dp"
+            android:layout_marginEnd="10dp"
+            android:gravity="center"
+            android:text="--:--"
+            android:textSize="18sp">
+
+        </TextView>
+
+        <TextView
+            android:layout_width="50dp"
+            android:layout_height="30dp"
+            android:gravity="center"
+            android:text="a"
+            android:textColor="@color/hint"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:textSize="18sp"></TextView>
+
+        <TextView
+            android:id="@+id/endHourDialog"
+            android:layout_width="50dp"
+            android:layout_height="30dp"
+            android:layout_marginStart="10dp"
+            android:gravity="center"
+            android:text="--:--"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:textSize="18sp">
+
+        </TextView>
+    </LinearLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

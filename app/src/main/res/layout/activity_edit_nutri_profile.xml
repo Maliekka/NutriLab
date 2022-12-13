@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:fillViewport="true"
+
+    >
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical"
+    tools:context=".Nutricionist.editNutriProfile">
+
+
+            <TextView
+                android:layout_gravity="center"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Sube una foto de perfil"
+                android:textStyle="bold"
+                android:textSize="18sp"
+                android:textColor="@color/lightred"
+                android:fontFamily="@font/corporative"
+                android:layout_margin="15dp">
+            </TextView>
+
+            <RelativeLayout
+                android:layout_gravity="center"
+                android:layout_width="150dp"
+                android:layout_height="150dp">
+                <ImageView
+                    android:id="@+id/editPicNutri"
+                    android:src="@drawable/lorempicsum"
+                    android:layout_width="150dp"
+                    android:layout_height="150dp"
+                    android:layout_gravity="center"
+                    >
+                </ImageView>
+                <ImageButton
+                    android:id="@+id/addPhotoNutri"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_alignParentBottom="true"
+                    android:layout_alignParentRight="true"
+                    android:background="@drawable/cameraicon"
+                    android:text="btn1">
+
+                </ImageButton>
+            </RelativeLayout>
+
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_gravity="center"
+        android:layout_margin="10dp">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Dirección de Consultorio"
+            android:fontFamily="@font/corporative"
+            android:layout_margin="10dp"
+            android:textStyle="bold"
+            android:textSize="18sp"
+            android:layout_gravity="center"
+            android:textColor="@color/lightred">
+        </TextView>
+
+        <EditText
+            android:id="@+id/editNutriProfileAbout"
+            android:layout_width="300dp"
+            android:layout_height="50dp"
+            android:hint="Escribe aquí"
+            android:gravity="center"
+            android:textColorHint="@color/hint"
+            android:textSize="15sp"
+            android:inputType="textMultiLine"
+            android:textColor="@color/textMain">
+        </EditText>
+    </LinearLayout>
+
+
+    <TextView
+        android:fontFamily="@font/corporative"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Horario"
+        android:layout_marginTop="15dp"
+        android:textStyle="bold"
+        android:textSize="18sp"
+        android:layout_gravity="center"
+        android:textColor="@color/lightred">
+    </TextView>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:textColor="@color/hint"
+        android:layout_marginBottom="10dp"
+        android:text="Toca el botón para añadir un horario">
+    </TextView>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:id="@+id/scheduleLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:padding="10dp"
+        >
+
+
+    </LinearLayout>
+
+    <ImageButton
+        android:id="@+id/addSchedule"
+        android:background="@drawable/ic_add"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="60dp"
+        android:backgroundTint="@color/textMain"
+        >
+    </ImageButton>
+
+
+    <Button
+        android:id="@+id/saveNutriProfChanges"
+        android:textAllCaps="false"
+        android:textSize="18sp"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:layout_gravity="center"
+        android:backgroundTint="@color/green"
+        android:textColor="@color/white"
+        android:text="Guardar Cambios"
+        android:layout_margin="15dp"
+        android:fontFamily="@font/corporative"
+        >
+
+    </Button>
+    </LinearLayout>
+</ScrollView>

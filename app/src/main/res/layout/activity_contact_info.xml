@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/white"
+    tools:context=".contactInfo">
+
+    <TextView
+        android:layout_marginTop="20dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="¿Quejas, Sugerencias, Ayuda?"
+        android:textSize="15dp"
+        android:textColor="@color/hint"
+        android:layout_gravity="center">
+    </TextView>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="15dp"
+        android:text=" Contáctanos "
+        android:background="@drawable/bordertext"
+        android:textColor="@color/green"
+        android:fontFamily="@font/corporative"
+        android:padding="3dp"
+        android:textSize="30dp"
+
+        android:layout_gravity="center">
+    </TextView>
+
+    <ImageButton
+        android:id="@+id/twitter"
+        android:background="@drawable/twitter"
+        android:layout_width="80dp"
+        android:layout_margin="30dp"
+        android:layout_height="80dp"
+        android:layout_gravity="center"></ImageButton>
+
+    <ImageButton
+        android:id="@+id/whatsapp"
+        android:background="@drawable/whatsapp"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_margin="30dp"
+        android:layout_gravity="center"></ImageButton>
+
+    <ImageButton
+        android:id="@+id/contactEmail"
+        android:background="@drawable/email"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_margin="30dp"
+        android:layout_gravity="center"></ImageButton>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:text=" © 2022 Paola Itzel López Ramírez "
+        android:textSize="15dp"
+        android:textColor="@color/hint"
+        android:layout_gravity="center">
+    </TextView>
+
+</LinearLayout>

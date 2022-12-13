@@ -1,0 +1,331 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".nutriPatientInfo">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <TextView
+                android:background="@drawable/bordertext"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:textSize="20sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="15sp"
+                android:fontFamily="@font/corporative"
+                android:padding="5dp"
+                android:text="Datos del paciente"
+                android:textColor="@color/green">
+            </TextView>
+
+            <ImageView
+                android:id="@+id/nutPrPic"
+                android:src="@drawable/ic_face"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_gravity="center"
+                android:layout_margin="21dp">
+
+            </ImageView>
+
+            <LinearLayout
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:orientation="horizontal"
+                android:layout_margin="10dp"
+                >
+                <TextView
+                    android:layout_width="80dp"
+                    android:layout_height="wrap_content"
+                    android:text="Nombre:"
+                    android:layout_marginStart="30dp"
+                    android:textStyle="bold"
+                    android:textSize="17sp"
+                    android:fontFamily="@font/corporative"
+                    android:textColor="@color/lightred">
+                </TextView>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:layout_marginStart="30dp"
+                    android:layout_gravity="center"
+                    android:textSize="15sp"
+                    android:textColor="@color/textMain"
+                    android:id="@+id/PDataName">
+                </TextView>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:orientation="horizontal"
+                android:layout_margin="10dp"
+                >
+                <TextView
+                    android:layout_width="80dp"
+                    android:layout_height="wrap_content"
+                    android:text="Edad:"
+                    android:layout_marginStart="30dp"
+                    android:textStyle="bold"
+                    android:textSize="17sp"
+                    android:fontFamily="@font/corporative"
+                    android:textColor="@color/lightred">
+                </TextView>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:layout_marginStart="30dp"
+                    android:layout_gravity="center"
+                    android:textSize="15sp"
+                    android:textColor="@color/textMain"
+                    android:id="@+id/PDataAge">
+                </TextView>
+            </LinearLayout>
+
+
+           <androidx.cardview.widget.CardView
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:backgroundTint="@color/shade"
+               android:layout_margin="30dp"
+               android:layout_gravity="center"
+               app:cardElevation="4dp"
+               app:cardCornerRadius="8dp">
+
+               <LinearLayout
+                   android:layout_width="match_parent"
+                   android:layout_height="match_parent"
+                   android:orientation="vertical"
+                   android:layout_gravity="center"
+                   android:paddingBottom="10dp"
+                   >
+                   <TextView
+                       android:text="Medidas"
+                       android:layout_gravity="center"
+                       android:layout_width="wrap_content"
+                       android:layout_height="wrap_content"
+                       android:layout_margin="20dp"
+                       android:textColor="@color/hint"
+                       android:textSize="18sp">
+                   </TextView>
+
+                   <LinearLayout
+                       android:layout_width="300dp"
+                       android:layout_height="wrap_content"
+                       android:layout_gravity="center"
+                       android:orientation="horizontal"
+                       android:layout_margin="10dp"
+                       >
+                       <TextView
+                           android:layout_width="80dp"
+                           android:layout_height="wrap_content"
+                           android:text="Peso:"
+                           android:layout_marginStart="30dp"
+                           android:textSize="17sp"
+                           android:textColor="@color/textMain">
+                       </TextView>
+
+                       <TextView
+                           android:layout_width="wrap_content"
+                           android:layout_height="wrap_content"
+                           android:text=""
+                           android:layout_marginStart="30dp"
+                           android:layout_gravity="center"
+                           android:textSize="15sp"
+                           android:textColor="@color/hint"
+                           android:id="@+id/PDataPeso">
+                       </TextView>
+                   </LinearLayout>
+                   <LinearLayout
+                       android:layout_width="300dp"
+                       android:layout_height="wrap_content"
+                       android:layout_gravity="center"
+                       android:orientation="horizontal"
+                       android:layout_margin="10dp"
+                       >
+                       <TextView
+                           android:layout_width="80dp"
+                           android:layout_height="wrap_content"
+                           android:text="Brazo:"
+                           android:layout_marginStart="30dp"
+                           android:textSize="17sp"
+                           android:textColor="@color/textMain">
+                       </TextView>
+
+                       <TextView
+                           android:layout_width="wrap_content"
+                           android:layout_height="wrap_content"
+                           android:text=""
+                           android:layout_marginStart="30dp"
+                           android:layout_gravity="center"
+                           android:textSize="15sp"
+                           android:textColor="@color/hint"
+                           android:id="@+id/PDataBrazo">
+                       </TextView>
+                   </LinearLayout>
+                   <LinearLayout
+                       android:layout_width="300dp"
+                       android:layout_height="wrap_content"
+                       android:layout_gravity="center"
+                       android:orientation="horizontal"
+                       android:layout_margin="10dp"
+                       >
+                       <TextView
+                           android:layout_width="80dp"
+                           android:layout_height="wrap_content"
+                           android:text="Cintura:"
+                           android:layout_marginStart="30dp"
+                           android:textSize="17sp"
+                           android:textColor="@color/textMain">
+                       </TextView>
+
+                       <TextView
+                           android:layout_width="wrap_content"
+                           android:layout_height="wrap_content"
+                           android:text=""
+                           android:layout_marginStart="30dp"
+                           android:layout_gravity="center"
+                           android:textSize="15sp"
+                           android:textColor="@color/hint"
+                           android:id="@+id/PDataCintura">
+                       </TextView>
+                   </LinearLayout>
+                   <LinearLayout
+                       android:layout_width="300dp"
+                       android:layout_height="wrap_content"
+                       android:layout_gravity="center"
+                       android:orientation="horizontal"
+                       android:layout_margin="10dp"
+                       >
+                       <TextView
+                           android:layout_width="80dp"
+                           android:layout_height="wrap_content"
+                           android:text="Cadera:"
+                           android:layout_marginStart="30dp"
+                           android:textSize="17sp"
+                           android:textColor="@color/textMain">
+                       </TextView>
+
+                       <TextView
+                           android:layout_width="wrap_content"
+                           android:layout_height="wrap_content"
+                           android:text=""
+                           android:layout_marginStart="30dp"
+                           android:layout_gravity="center"
+                           android:textSize="15sp"
+                           android:textColor="@color/hint"
+                           android:id="@+id/PDataCadera">
+                       </TextView>
+                   </LinearLayout>
+                   <LinearLayout
+                       android:layout_width="300dp"
+                       android:layout_height="wrap_content"
+                       android:layout_gravity="center"
+                       android:orientation="horizontal"
+                       android:layout_margin="10dp"
+                       >
+                       <TextView
+                           android:layout_width="80dp"
+                           android:layout_height="wrap_content"
+                           android:text="Ombligo:"
+                           android:layout_marginStart="30dp"
+                           android:textSize="17sp"
+                           android:textColor="@color/textMain">
+                       </TextView>
+
+                       <TextView
+                           android:layout_width="wrap_content"
+                           android:layout_height="wrap_content"
+                           android:text=""
+                           android:layout_marginStart="30dp"
+                           android:layout_gravity="center"
+                           android:textSize="15sp"
+                           android:textColor="@color/hint"
+                           android:id="@+id/PDataOmbligo">
+                       </TextView>
+                   </LinearLayout>
+
+               </LinearLayout>
+
+           </androidx.cardview.widget.CardView>
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center">
+                <Button
+                    android:id="@+id/editPData"
+                    android:textAllCaps="false"
+                    android:textSize="14sp"
+                    android:layout_gravity="center"
+                    android:layout_width="80dp"
+                    android:textColor="@color/white"
+                    android:text="Editar"
+                    android:backgroundTint="#73b378"
+                    android:layout_height="50dp"
+                    android:layout_margin="5dp"
+                    android:fontFamily="@font/corporative">
+                </Button>
+
+
+                <Button
+                    android:id="@+id/elimPData"
+                    android:textAllCaps="false"
+                    android:textSize="14sp"
+                    android:layout_width="159dp"
+                    android:layout_height="50dp"
+                    android:layout_gravity="center"
+                    android:backgroundTint="@color/lightred"
+                    android:textColor="@color/white"
+                    android:text="Baja de paciente"
+                    android:layout_margin="5dp"
+                    android:fontFamily="@font/corporative"
+                    >
+                </Button>
+                <Button
+                    android:id="@+id/derivarPData"
+                    android:textAllCaps="false"
+                    android:textSize="14sp"
+                    android:layout_width="90dp"
+                    android:layout_height="50dp"
+                    android:layout_gravity="center"
+                    android:backgroundTint="@color/hint"
+                    android:textColor="@color/white"
+                    android:text="Derivar"
+                    android:layout_margin="5dp"
+                    android:fontFamily="@font/corporative"
+                    >
+                </Button>
+
+            </LinearLayout>
+
+
+
+
+        </LinearLayout>
+
+
+    </ScrollView>
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

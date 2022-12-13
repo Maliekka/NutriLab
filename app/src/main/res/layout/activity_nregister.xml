@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/white"
+    tools:context=".Nutricionist.Nregister">
+
+    <TextView
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:layout_margin="30dp"
+        android:textSize="30sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Nutriólogo"
+        android:padding="7dp"
+        android:background="@drawable/bordertext"
+        android:fontFamily="@font/corporative"
+        android:textColor="@color/green"
+        />
+    <LinearLayout
+        android:layout_gravity="center"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:orientation="vertical">
+
+        <EditText
+            android:id="@+id/rNName"
+            android:layout_margin="10dp"
+            android:layout_width="200dp"
+            android:layout_height="50dp"
+            android:hint="Nombre"
+            android:textColorHint="@color/hint"
+            android:textColor="#3b3b3b">
+        </EditText>
+        <EditText
+            android:id="@+id/rlNName"
+            android:layout_margin="10dp"
+            android:layout_width="200dp"
+            android:layout_height="50dp"
+            android:hint="Apellidos"
+            android:textColorHint="@color/hint"
+            android:textColor="#3b3b3b">
+        </EditText>
+        <EditText
+            android:id="@+id/rNcedula"
+            android:layout_margin="10dp"
+            android:layout_width="200dp"
+            android:layout_height="50dp"
+            android:hint="Número de Cédula"
+            android:textColorHint="@color/hint"
+            android:textColor="#3b3b3b">
+        </EditText>
+    </LinearLayout>
+
+    <TextView
+        android:text="Tus credenciales de inicio de sesión"
+        android:layout_gravity="center"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:textColor="@color/hint"
+        android:textSize="20dp">
+
+    </TextView>
+    <LinearLayout
+        android:layout_gravity="center"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:orientation="vertical">
+
+        <EditText
+            android:id="@+id/rNemail"
+            android:layout_margin="10dp"
+            android:layout_width="200dp"
+            android:layout_height="50dp"
+            android:hint="Correo Electrónico"
+            android:textColorHint="@color/hint"
+            android:textColor="#3b3b3b">
+        </EditText>
+        <EditText
+            android:id="@+id/rNpass"
+            android:layout_margin="10dp"
+            android:layout_width="200dp"
+            android:layout_height="50dp"
+            android:hint="Contraseña"
+            android:inputType="textPassword"
+            android:textColorHint="@color/hint"
+            android:textColor="#3b3b3b">
+        </EditText>
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/register"
+        android:layout_gravity="center"
+        android:textAllCaps="false"
+        android:textSize="20sp"
+        android:layout_marginTop="10dp"
+        android:text="Registrar"
+        android:textAlignment="center"
+        android:layout_width="160dp"
+        android:backgroundTint="@color/green"
+        android:layout_height="50dp"
+        android:fontFamily="@font/corporative">
+    </Button>
+
+
+</LinearLayout>
