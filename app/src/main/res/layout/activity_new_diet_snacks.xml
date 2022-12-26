@@ -6,6 +6,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+
+
     <LinearLayout
 
         android:layout_width="match_parent"
@@ -19,12 +21,43 @@
         android:layout_height="wrap_content"
         android:gravity="center"
         android:padding="20dp"
-        android:text="Opciones de colación"
+        android:text="Colaciones y Aclaraciones"
         android:textColor="@color/textMain"
         android:textSize="18sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
     </TextView>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_gravity="center"
+            android:layout_margin="10dp">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Comentarios / Aclaraciones"
+                android:fontFamily="@font/corporative"
+                android:layout_margin="10dp"
+                android:textStyle="bold"
+                android:textSize="18sp"
+                android:layout_gravity="center"
+                android:textColor="@color/lightred">
+            </TextView>
+
+            <EditText
+                android:id="@+id/extraData"
+                android:layout_width="300dp"
+                android:layout_height="100dp"
+                android:hint="Escribe aquí"
+                android:gravity="center"
+                android:textColorHint="@color/hint"
+                android:textSize="15sp"
+                android:inputType="textMultiLine"
+                android:textColor="@color/textMain">
+            </EditText>
+        </LinearLayout>
 
 
 
@@ -49,7 +82,7 @@
                 android:id="@+id/addSnack"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
-                android:layout_marginp="32dp"
+                android:layout_margin="32dp"
                 android:background="@drawable/ic_add"
                 android:backgroundTint="@color/textMain"
                 app:layout_constraintEnd_toEndOf="parent"

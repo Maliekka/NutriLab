@@ -33,7 +33,7 @@ public class nutriProfileFragment extends Fragment {
     private FirebaseFirestore db;
     private FirebaseAuth nyauth;
     private ImageView profilePic;
-    private TextView nombre,apellidos,ncedula,acercade;
+    private TextView nombre,apellidos,ncedula,acercade, precio;
     private ImageButton toEdit;
     private String uID;
     private List<Shift> ListSchedule = new ArrayList<>();
@@ -67,6 +67,7 @@ public class nutriProfileFragment extends Fragment {
         nombre = (TextView) getView().findViewById(R.id.NutriProfileName);
         apellidos = (TextView) getView().findViewById(R.id.NutriProfileLastName);
         ncedula = (TextView) getView().findViewById(R.id.NutriProfileNced);
+        precio = (TextView) getView().findViewById(R.id.NutriProfilePrice);
         acercade = (TextView) getView().findViewById(R.id.NutriProfileAbout);
         scheduleLayout = (LinearLayout) getView().findViewById(R.id.scheduleProfileNut);
         uID=nyauth.getUid();
@@ -112,6 +113,7 @@ public class nutriProfileFragment extends Fragment {
                 String lastName = usr.get("Apellidos").toString();
                 String nCed = usr.get("nutriologoData.nCedula").toString();
                 String about = usr.get("nutriologoData.About").toString();
+                String price = usr.get("nutriologoData.Precio").toString();
                 //obtener horarios
                 ListSchedule = usr.toObject(Horarios.class).Horario;
                 if(ListSchedule.size()!=0){
@@ -131,10 +133,12 @@ public class nutriProfileFragment extends Fragment {
                 apellidos.setText(lastName);
                 ncedula.setText(nCed);
                 acercade.setText(about);
+                precio.setText(price);
             }
             else{
                 profilePic.setImageResource(R.drawable.lorempicsum);
                 nombre.setText("NaN");
+                precio.setText("NaN");
                 apellidos.setText("NaN");
                 ncedula.setText("NaN");
                 acercade.setText("NaN");

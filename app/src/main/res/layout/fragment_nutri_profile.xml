@@ -56,7 +56,7 @@
                         android:text="Nombre"
                         android:layout_margin="10dp"
                         android:textStyle="bold"
-                        android:textSize="18sp"
+                        android:textSize="13sp"
                         android:fontFamily="@font/corporative"
                         android:textColor="@color/lightred">
                     </TextView>
@@ -66,7 +66,7 @@
                         android:layout_height="wrap_content"
                         android:text=""
                         android:layout_margin="10dp"
-                        android:textSize="15sp"
+                        android:textSize="13sp"
                         android:textColor="@color/textMain"
                         android:id="@+id/NutriProfileName">
                     </TextView>
@@ -84,7 +84,7 @@
                         android:text="Apellidos"
                         android:layout_margin="10dp"
                         android:textStyle="bold"
-                        android:textSize="18sp"
+                        android:textSize="13sp"
                         android:fontFamily="@font/corporative"
                         android:textColor="@color/lightred">
                     </TextView>
@@ -96,7 +96,7 @@
                         android:text=""
                         android:layout_margin="10dp"
                         android:textColor="@color/textMain"
-                        android:textSize="15sp">
+                        android:textSize="13sp">
                     </TextView>
                 </LinearLayout>
                 <LinearLayout
@@ -111,7 +111,7 @@
                         android:text="Número de Cédula"
                         android:layout_margin="10dp"
                         android:textStyle="bold"
-                        android:textSize="18sp"
+                        android:textSize="13sp"
                         android:fontFamily="@font/corporative"
                         android:textColor="@color/lightred">
                     </TextView>
@@ -122,7 +122,7 @@
                         android:layout_height="wrap_content"
                         android:text=""
                         android:layout_margin="10dp"
-                        android:textSize="15sp"
+                        android:textSize="13sp"
                         android:textColor="@color/textMain">
                     </TextView>
                 </LinearLayout>
@@ -138,7 +138,7 @@
                         android:text="Dirección de Consultorio"
                         android:layout_margin="10dp"
                         android:textStyle="bold"
-                        android:textSize="18sp"
+                        android:textSize="13sp"
                         android:layout_gravity="center"
                         android:fontFamily="@font/corporative"
                         android:textColor="@color/lightred">
@@ -150,8 +150,37 @@
                         android:layout_height="60dp"
                         android:text=""
                         android:layout_gravity="center"
+                        android:textSize="13sp"
                         android:textColor="@color/textMain">
 
+                    </TextView>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    >
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Precio de consulta"
+                        android:layout_margin="10dp"
+                        android:textStyle="bold"
+                        android:textSize="13sp"
+                        android:fontFamily="@font/corporative"
+                        android:textColor="@color/lightred">
+                    </TextView>
+
+                    <TextView
+                        android:id="@+id/NutriProfilePrice"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text=""
+                        android:layout_margin="10dp"
+                        android:textSize="13sp"
+                        android:textColor="@color/textMain">
                     </TextView>
                 </LinearLayout>
 

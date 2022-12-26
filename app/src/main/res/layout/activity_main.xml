@@ -59,6 +59,7 @@
             android:textColor="#3b3b3b"
             android:textColorHint="@color/hint"
             android:background="@drawable/bordericons"
+
             android:padding="5dp"
             >
         </EditText>

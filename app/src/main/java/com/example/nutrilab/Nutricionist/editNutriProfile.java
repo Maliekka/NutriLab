@@ -55,7 +55,7 @@ public class editNutriProfile extends AppCompatActivity implements DialogSchedul
     private ImageView profilePic;
     private ImageButton addPhoto, addSchedule;
     private Button saveChanges;
-    private EditText aboutField;
+    private EditText aboutField, price;
     private LinearLayout scheduleLayout;
     final List<String> dayList = new ArrayList<>();
     FirebaseAuth nyauth;
@@ -80,6 +80,7 @@ public class editNutriProfile extends AppCompatActivity implements DialogSchedul
         profilePic = findViewById(R.id.editPicNutri);
         addPhoto = findViewById(R.id.addPhotoNutri);
         aboutField = findViewById(R.id.editNutriProfileAbout);
+        price = findViewById(R.id.editNutriProfilePrice);
         saveChanges = findViewById(R.id.saveNutriProfChanges);
         addSchedule = findViewById(R.id.addSchedule);
         ListSchedule = new ArrayList<>();
@@ -166,6 +167,13 @@ public class editNutriProfile extends AppCompatActivity implements DialogSchedul
             ListSchedule.clear();
         }
         String aboutEdited = aboutField.getText().toString();
+        Double priceData;
+        if(!price.getText().toString().isEmpty()){
+            priceData = Double.parseDouble(price.getText().toString());
+        }
+        else {
+            priceData = 0.00;
+        }
         View rowShift;
         for (int i = 0; i<scheduleLayout.getChildCount();i++){
            rowShift=scheduleLayout.getChildAt(i);
@@ -183,8 +191,7 @@ public class editNutriProfile extends AppCompatActivity implements DialogSchedul
                 if(document.exists()){
                     documentReference.update("nutriologoData.About", aboutEdited);
                     documentReference.update("Horario",ListSchedule);
-
-
+                    documentReference.update("nutriologoData.Precio", priceData);
                     if(nutriPicURI!= null){
                         ContentResolver contentResolver = getContentResolver();
                         MimeTypeMap mime = MimeTypeMap.getSingleton();
