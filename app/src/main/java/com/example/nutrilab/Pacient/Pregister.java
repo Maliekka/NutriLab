@@ -10,6 +10,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.example.nutrilab.Others.PushNotificationSender;
 import com.example.nutrilab.R;
 import com.example.nutrilab.adminScreen;
 import com.example.nutrilab.securityQuestion;
@@ -35,6 +36,7 @@ public class Pregister extends AppCompatActivity {
     private FirebaseFirestore db;
     private String userID;
     private DocumentReference nReference;
+    String FCMToken;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -96,6 +98,7 @@ public class Pregister extends AppCompatActivity {
                         }else{
                             for (DocumentSnapshot snapshot:snapshotList){
                                 nReference=snapshot.getReference();
+                                FCMToken = snapshot.getString("FCMToken");
                             }
                             uploadPatient(fmail,fpassword,flage,fname,flname);
                         }
@@ -104,6 +107,14 @@ public class Pregister extends AppCompatActivity {
             });
         }
     }
+
+
+        public void notifyNewPatient(String paciente){
+            if(FCMToken != null){
+                PushNotificationSender.pushNotif(this, FCMToken,"Nuevo Paciente", "Se ha dado de alta a " + paciente + " en tu lista de pacientes.");
+            }
+        }
+
 
 
     public void uploadPatient(String fmail, String fpassword, String flage, String fname, String flname ){
@@ -136,6 +147,9 @@ public class Pregister extends AppCompatActivity {
                             Toast.makeText(Pregister.this, "Paciente registrado con éxito", Toast.LENGTH_SHORT).show();
                             DocumentReference ref = db.collection("users").document(userID);
                             ref.update("Reference",ref);
+                            //
+                           notifyNewPatient(user.get("Nombre").toString());
+                            //
                             Intent sq = new Intent(Pregister.this, securityQuestion.class);
                             startActivity(sq);
                             finish();

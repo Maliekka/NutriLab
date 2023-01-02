@@ -13,6 +13,7 @@ import androidx.fragment.app.FragmentTransaction;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.provider.Settings;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -25,8 +26,14 @@ import com.example.nutrilab.about;
 import com.example.nutrilab.contactInfo;
 import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.FieldValue;
+import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.messaging.FirebaseMessaging;
 
 public class nutriMenu extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
+    FirebaseFirestore db;
+    String uID;
     DrawerLayout drawNutri;
     NavigationView naviNutri;
     Toolbar toolbar;
@@ -37,9 +44,11 @@ public class nutriMenu extends AppCompatActivity implements NavigationView.OnNav
         setContentView(R.layout.activity_nutri_menu);
         drawNutri= findViewById(R.id.nutriDrawerLayout);
         naviNutri = findViewById(R.id.nutriNavView);
+        db = FirebaseFirestore.getInstance();
+        nyauth = FirebaseAuth.getInstance();
+        uID= nyauth.getUid();
         // toolbar and menu
         getSupportFragmentManager().beginTransaction().add(R.id.content,new nutriPatientsFragment()).commit();
-        nyauth = FirebaseAuth.getInstance();
         toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         ActionBar actionBar = getSupportActionBar();
@@ -47,6 +56,7 @@ public class nutriMenu extends AppCompatActivity implements NavigationView.OnNav
         actionBar.setHomeAsUpIndicator(R.drawable.ic_drawer_button);
         naviNutri.setNavigationItemSelectedListener(this);
 
+        GetToken();
 
     }
 
@@ -103,14 +113,27 @@ public class nutriMenu extends AppCompatActivity implements NavigationView.OnNav
                 ft.replace(R.id.content, new nutriConfigFragment()).commit();
                 break;
             case R.id.nutriMenuLogout:
-                startActivity(new Intent(this, MainActivity.class));
-                finish();
-                nyauth.signOut();
+
+                DocumentReference documentReference = db.collection("users").document(uID);
+                documentReference.update("FCMToken", null).addOnSuccessListener(unused -> {
+                    nyauth.signOut();
+                    startActivity(new Intent(this, MainActivity.class));
+                    finish();
+                });
                 break;
         }
         drawNutri.closeDrawer(GravityCompat.START);
     }
 
+
+    private void GetToken(){
+        FirebaseMessaging.getInstance().getToken().addOnSuccessListener(this::updateToken);
+    }
+
+    private void updateToken(String token){
+        DocumentReference documentReference = db.collection("users").document(uID);
+        documentReference.update("FCMToken", token);
+    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {

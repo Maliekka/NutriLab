@@ -97,7 +97,7 @@ public class nutriEditPData extends AppCompatActivity {
         model.setDatos(d);
         ref.update("Datos", d);
         Intent i = new Intent(this, nutriPatientInfo.class);
-        i.putExtra("dataPatient",model);
+        i.putExtra("dP",model);
         startActivity(i);
         finish();
     }

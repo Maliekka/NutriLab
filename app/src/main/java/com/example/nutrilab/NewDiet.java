@@ -14,6 +14,7 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.nutrilab.Others.PushNotificationSender;
 import com.example.nutrilab.Pacient.PatientModels;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
@@ -114,7 +115,7 @@ public class NewDiet extends AppCompatActivity {
         }
         HashMap<String,Object> NutriPlan = new HashMap<>();
 
-        HashMap<String,Integer> Desayuno = new HashMap<>();
+        HashMap<String,Object> Desayuno = new HashMap<>();
         Desayuno.put("Proteina",nPlan[0]);
         Desayuno.put("Verdura", nPlan[1]);
         Desayuno.put("Leguminosas",nPlan[2]);
@@ -148,13 +149,21 @@ public class NewDiet extends AppCompatActivity {
             public void onSuccess(DocumentReference documentReference) {
                 String planId=documentReference.getId();
                 documentReference.update("PlanReference",planId);
+                onUpdateNotification();
                 Intent i = new Intent(NewDiet.this,NewDietSnacks.class);
                 i.putExtra("ID",planId);
                 startActivity(i);
             }
         });
 
-        };
+        }
+
+    public void onUpdateNotification(){
+        String FCMToken = p.getFCMToken();
+        if(FCMToken != null){
+            PushNotificationSender.pushNotif(this, FCMToken,"Nuevo Plan", "¡Tu nutriólogo ha publicado un nuevo plan!");
+        }
+    }
 
 
 }

@@ -11,7 +11,7 @@ public class NutriModels implements Parcelable {
     private String Apellidos;
     private String Email;
     private Date regTimestamp;
-
+    private String FCMToken;
 
     private NutriModels(){
 
@@ -29,6 +29,7 @@ public class NutriModels implements Parcelable {
         Nombre = in.readString();
         Apellidos = in.readString();
         Email = in.readString();
+        FCMToken = in.readString();
         nutriologoData = (HashMap<String , Object>)in.readSerializable();
         regTimestamp = (Date)in.readSerializable();
     }
@@ -58,6 +59,7 @@ public class NutriModels implements Parcelable {
         parcel.writeString(Email);
         parcel.writeSerializable(nutriologoData);
         parcel.writeSerializable(regTimestamp);
+        parcel.writeString(FCMToken);
     }
 
     public HashMap<String, Object> getNutriologoData() {
@@ -101,6 +103,14 @@ public class NutriModels implements Parcelable {
 
     public void setRegTimestamp(Date regTimestamp) {
         this.regTimestamp = regTimestamp;
+    }
+
+    public String getFCMToken() {
+        return FCMToken;
+    }
+
+    public void setFCMToken(String FCMToken) {
+        this.FCMToken = FCMToken;
     }
 
 

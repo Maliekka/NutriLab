@@ -71,6 +71,9 @@ public class nutriPatientsFragment extends Fragment {
 
         Query q = db.collection("users").whereEqualTo("NutriLinked",reference);
 
+
+
+
         FirestoreRecyclerOptions<PatientModels> options = new FirestoreRecyclerOptions.Builder<PatientModels>()
                 .setQuery(q,PatientModels.class)
                 .build();
@@ -89,7 +92,8 @@ public class nutriPatientsFragment extends Fragment {
                 holder.Apellidos.setText(model.getApellidos());
                 holder.itemView.setOnClickListener(view1 -> {
                     Intent intent = new Intent(getContext(), nutriPatientInfo.class);
-                    intent.putExtra("dataPatient",model);
+                    intent.putExtra("dP",model);
+
                     startActivity(intent);
                 });
             }

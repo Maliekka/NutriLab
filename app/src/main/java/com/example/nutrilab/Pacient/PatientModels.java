@@ -13,13 +13,16 @@ public class PatientModels implements Parcelable{
     private String Nombre;
     private String Apellidos;
     private String Email;
+    private String FCMToken;
     private DocumentReference NutriLinked;
     private DocumentReference Reference;
     private int Type;
     private HashMap<String,Object> Datos = new HashMap<>();
 
-    private PatientModels(){
+
+    public PatientModels(){
     }
+
    @Override
    public String toString(){
         return Nombre + " " + Apellidos;
@@ -30,6 +33,7 @@ public class PatientModels implements Parcelable{
         Nombre = in.readString();
         Apellidos = in.readString();
         Email = in.readString();
+        FCMToken = in.readString();
         NutriLinked = FirebaseFirestore.getInstance().document(in.readString());
         Type = in.readInt();
         Datos = (HashMap<String , Object>)in.readSerializable();
@@ -41,6 +45,7 @@ public class PatientModels implements Parcelable{
         dest.writeString(Nombre);
         dest.writeString(Apellidos);
         dest.writeString(Email);
+        dest.writeString(FCMToken);
         dest.writeString(NutriLinked.getPath());
         dest.writeInt(Type);
         dest.writeSerializable(Datos);
@@ -118,5 +123,13 @@ public class PatientModels implements Parcelable{
 
     public void setDatos(HashMap<String, Object> datos) {
         Datos = datos;
+    }
+
+  public String getFCMToken() {
+        return FCMToken;
+    }
+
+    public void setFCMToken(String FCMToken) {
+        this.FCMToken = FCMToken;
     }
 }

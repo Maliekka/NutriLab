@@ -34,8 +34,14 @@ import com.example.nutrilab.patientRecipesFragment;
 import com.example.nutrilab.patientSettingsFragment;
 import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.FieldValue;
+import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.messaging.FirebaseMessaging;
 
 public class pacientMenu extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
+    FirebaseFirestore db;
+    String uID;
     DrawerLayout drawPatient;
     NavigationView naviPatient;
     Toolbar toolbar;
@@ -46,7 +52,9 @@ public class pacientMenu extends AppCompatActivity implements NavigationView.OnN
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_pacient_menu);
+        db = FirebaseFirestore.getInstance();
         nyauth = FirebaseAuth.getInstance();
+        uID= nyauth.getUid();
         drawPatient = findViewById(R.id.patientDrawerLayout);
         naviPatient = findViewById(R.id.patientNavView);
         getSupportFragmentManager().beginTransaction().add(R.id.patientFrame,new patientDietFragment()).commit();
@@ -56,6 +64,8 @@ public class pacientMenu extends AppCompatActivity implements NavigationView.OnN
         actionBar.setDisplayHomeAsUpEnabled(true);
         actionBar.setHomeAsUpIndicator(R.drawable.ic_drawer_button);
         naviPatient.setNavigationItemSelectedListener(this);
+
+        GetToken();
     }
 
     @Override
@@ -114,11 +124,23 @@ public class pacientMenu extends AppCompatActivity implements NavigationView.OnN
                 break;
 
             case R.id.patientMenuLogout:
-                startActivity(new Intent(this, MainActivity.class));
-                finish();
-                nyauth.signOut();
+                DocumentReference documentReference = db.collection("users").document(uID);
+                documentReference.update("FCMToken", null).addOnSuccessListener(unused -> {
+                    nyauth.signOut();
+                    startActivity(new Intent(this, MainActivity.class));
+                    finish();
+                });
                 break;
         }
         drawPatient.closeDrawer(GravityCompat.START);
+    }
+
+    private void GetToken(){
+        FirebaseMessaging.getInstance().getToken().addOnSuccessListener(this::updateToken);
+    }
+
+    private void updateToken(String token){
+        DocumentReference documentReference = db.collection("users").document(uID);
+        documentReference.update("FCMToken", token);
     }
 }
